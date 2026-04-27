@@ -1,0 +1,44 @@
+[
+  {
+    "attack": "Normal",
+    "severity": "None",
+    "description": "Regular legitimate network traffic",
+    "indicators": ["Normal packet sizes", "Standard protocols", "Expected ports"],
+    "mitigation": "No action required"
+  },
+  {
+    "attack": "Port Scan",
+    "severity": "Low",
+    "description": "Systematic scan of ports to find open services",
+    "indicators": ["High connection count", "Multiple destination ports", "Low data transfer"],
+    "mitigation": "Block source IP, enable port scan detection rules"
+  },
+  {
+    "attack": "Brute Force",
+    "severity": "Medium",
+    "description": "Repeated login attempts to crack credentials",
+    "indicators": ["Multiple failed logins", "Same destination IP/port", "SSH/FTP traffic"],
+    "mitigation": "Rate limiting, account lockout, MFA enforcement"
+  },
+  {
+    "attack": "SQL Injection",
+    "severity": "High",
+    "description": "Malicious SQL code injected into database queries",
+    "indicators": ["HTTP POST requests", "Special characters in payload", "Database error responses"],
+    "mitigation": "WAF rules, input validation, parameterized queries"
+  },
+  {
+    "attack": "DoS",
+    "severity": "High",
+    "description": "Flood of requests to overwhelm a single target",
+    "indicators": ["Extremely high packet rate", "Single source IP", "ICMP/UDP flood"],
+    "mitigation": "Rate limiting, traffic scrubbing, upstream filtering"
+  },
+  {
+    "attack": "DDoS",
+    "severity": "Critical",
+    "description": "Coordinated flood from multiple sources to exhaust resources",
+    "indicators": ["Multiple source IPs", "Massive bandwidth consumption", "Botnet patterns"],
+    "mitigation": "CDN protection, anycast diffusion, ISP-level filtering"
+  }
+]
